@@ -65,17 +65,17 @@ As the final result is a list of kmers with their respective frequencies (a 2 co
 
 Fortunately, there is a way of doing a meta-association without a Hash-map. Dealing with kmers presents an advantage in this case: They can be sorted lexicographically, and the result is deterministic (always the same). Thus, we can assign a base (4 in this case) to represent the kmer alphabet (`ACGT`)  with numbers (`0123`) Resulting in a code: ` A:0, C:1, G:2, T:3`. Thus a kmer such as `TCAGT` can be encoded as `31023`. Why would we want to do this? Well because a number such as `31023` in base 4 can be converted to another number in base 10 (In this case `843`). As the different kmers are unique **and** can be sorted, every number is associated with **one and only one** number. This allows us to establish these numbers as the index of a linear structure such a list or an array without depending on a Hash! (Actually, we can sort of say we are making our own hash function, but the trick is this one is faster to compute).
 
-That might got a bit confusing, to illustrate we are making an system that gives to every kmer an unique <s>position</s> index  in an array/list/vector. So for example, let us take a kmer of size $k = 4$ , There a total of $ base^{k} = 4^4 = 256 $ possible kmers. The encoding would results in something like this:
+That might got a bit confusing, to illustrate we are making an system that gives to every kmer an unique <s>position</s> index  in an array/list/vector. So for example, let us take a kmer of size <img src="https://render.githubusercontent.com/render/math?math=k=4">, There a total of <img src="https://render.githubusercontent.com/render/math?math=base^{k} = 4^4 = 256"> possible kmers. The encoding would results in something like this:
 
-| Kmer     | index    |
-| -------- | -------- |
-| AAAA     | 0        |
-| AAAC     | 1        |
-| AAAG     | 2        |
-| AAAT     | 3        |
-| AACA     | 4        |
-| $\vdots$ | $\vdots$ |
-| TTTT     | 255      |
+| Kmer                                                         | index                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| AAAA                                                         | 0                                                            |
+| AAAC                                                         | 1                                                            |
+| AAAG                                                         | 2                                                            |
+| AAAT                                                         | 3                                                            |
+| AACA                                                         | 4                                                            |
+| <img src="https://render.githubusercontent.com/render/math?math=\vdots"> | <img src="https://render.githubusercontent.com/render/math?math=\vdots"> |
+| TTTT                                                         | 255                                                          |
 
 **After all this errant, the rationale:** The first step is to create an array (that will store the frequencies) where all the kmers can be stored. This is done with the formula introduced above. `kmer2idx` does the kmer-index encoding: given a kmer it returns the index on the array where the kmer belongs. `freq_kmers` goes over the sequence that the `main` function provided making slices of size k (kmers) and calls to `kmer2idx` to know which index of the array should be updated. 
 
