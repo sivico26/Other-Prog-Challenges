@@ -20,4 +20,4 @@ You can check the source code for further details.
 
 To give a grasp of Rust efficiency, here is a benchmark (done with [Hyperfine](https://www.youtube.com/watch?v=CEXVKH646Zk)) of the performance of how much it takes to process the 10 MIllion numbers. 
 
-![Benchmark](/home/sivico26/Documentos/Documents/Projects/Other_prog_languages/Other-Prog-Challenges/Challenges/5-21-Collatz/benchmark.png)
+![Benchmark](https://raw.githubusercontent.com/sivico26/Other-Prog-Challenges/main/Challenges/5-21-Collatz/benchmark.png)
