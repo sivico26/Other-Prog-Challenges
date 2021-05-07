@@ -2,9 +2,9 @@
 
 ### The challenge
 
-Let us describe the following process with : given a number `x`, if it is even, it is going to be divided by `2`, but if it is odd it is going to be multiplied by `3` and added `1`. The process is applied recursively over the result.
+Let us describe the following process: given a number `x`, if it is _even_, it is going to be divided by `2`, but if it is _odd_ it is going to be multiplied by `3` and added `1`. The process is applied _recursively_ over the result.
 
-The _Collatz's conjecture_ states that for any number `x > 1`  this process will converge to `1`. The number of steps required to reach `1` is known as the **stop time**. 
+The _Collatz's conjecture_ states that for any number `x > 1`  this process will converge to `1`. The number of steps required to reach `1` is known as the **stop time** of that number. 
 
 Now, among the first **10 Million _natural_ numbers**, which of them has the largest __stop time__?
 
