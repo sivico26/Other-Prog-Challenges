@@ -23,4 +23,5 @@ def find_button(mat):
     for i in range(n):
         for j in range(m):
             if recorrido(mat, (i,j)) >= goal:
-                print(f"La tecla inicial es {mat[i,j]} ({i},{j})")
+                return i,j
+                #print(f"La tecla inicial es {mat[i,j]} ({i},{j})")
