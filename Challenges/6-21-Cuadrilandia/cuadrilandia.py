@@ -41,7 +41,7 @@ def rot45(matrix, clockwise = True, inplace = False):
         new_rings = [np.roll(array, -1*shift) for array, shift in zip(map(np.array, rings), shifts)]
     
     ## Assign
-    n_items = [0]*4
+    n_items = [0]*n_rings
     for c in range(4):
         for r in range(n_rings):
             s = slice(*ring_slices[r][c])
