@@ -35,10 +35,8 @@ def rot45(matrix, clockwise = True, inplace = False):
             
     ## Prepare
     shifts = ((matrix.shape[0] -i*2) // 2 for i in range(n_rings))
-    if clockwise:
-        new_rings = [np.roll(array, shift) for array, shift in zip(map(np.array, rings), shifts)]
-    else:
-        new_rings = [np.roll(array, -1*shift) for array, shift in zip(map(np.array, rings), shifts)]
+    direc = 1 if clockwise else -1
+    new_rings = [np.roll(array, shift*direc) for array, shift in zip(map(np.array, rings), shifts)]
     
     ## Assign
     n_items = [0]*n_rings
