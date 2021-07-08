@@ -28,7 +28,6 @@ fn parse_fasta() -> Vec<ProtSeq> {
     prots.push(ProtSeq{name:header, seq:seq});
     return prots
 }
-
 fn density(prot:&ProtSeq) -> f64 {
     let mol_weights: HashMap<char, f64> = 
     [('A',89.1), ('R',174.2), ('N',132.1), ('D',133.1),
