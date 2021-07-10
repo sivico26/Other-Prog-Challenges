@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""To use this sript, call it giving a fasta with the list of proteins as first argument:
+
+./denser_prot.py my_prteins.faa
+
+The densest protein would be returned in fasta format through stdout."""
+
 from dataclasses import dataclass
 from collections import defaultdict
 import sys
