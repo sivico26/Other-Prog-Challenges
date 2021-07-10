@@ -15,6 +15,7 @@ class ProtSeq:
     name: str
     seq: str
 
+"""Aminoacids' molecular weights (g/mol)"""
 mol_weights = defaultdict(lambda:136.9) ## In case we find weird characters 
 mol_weights.update({
 "A":89.1,"R":174.2,"N":132.1,"D":133.1,
