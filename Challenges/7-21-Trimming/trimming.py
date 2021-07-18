@@ -108,4 +108,4 @@ if __name__ == "__main__":
     elif len(args) == 2 or len(args) == 4:
         trimming(*args)
     elif len(args) == 3:
-        
+        pass
