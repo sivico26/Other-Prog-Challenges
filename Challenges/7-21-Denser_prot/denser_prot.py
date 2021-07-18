@@ -1,21 +1,10 @@
 #!/usr/bin/env python
-"""To use this sript, call it giving a fasta with the list of proteins as first argument:
-
-./denser_prot.py my_prteins.faa
-
-The densest protein would be returned in fasta format through stdout."""
-
-from dataclasses import dataclass
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 import sys
 
-"Define a dataclass to have the header information associated with the sequence"
-@dataclass
-class ProtSeq:
-    name: str
-    seq: str
+"Define a named tuple to have the header information associated with the sequence"
+ProtSeq = namedtuple("ProtSeq", ["name", "seq"])
 
-"""Aminoacids' molecular weights (g/mol)"""
 mol_weights = defaultdict(lambda:136.9) ## In case we find weird characters 
 mol_weights.update({
 "A":89.1,"R":174.2,"N":132.1,"D":133.1,
