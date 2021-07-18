@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""To use this script, either provide a the path to a fastq file and a quality
+value (2 arguments, output will be written to stdout), or... 
+
+python trimming.py reads.fastq 20
+
+""" ## Finish this
 from dataclasses import dataclass
 from collections import namedtuple
 import sys
@@ -95,3 +101,11 @@ def trimming(file, quality, outfile = sys.stdout, window = 5):
         read.seq = read.seq[start:end]
         read.qual = read.qual[start:end]
     write_fastq(reads, outfile)
+    
+if __name__ == "__main__":
+    if len(args := sys.argv) < 2:
+        print("Expected at least 2 arguments. Ensure to provide an fastq file and a phred quality value.")
+    elif len(args) == 2 or len(args) == 4:
+        trimming(*args)
+    elif len(args) == 3:
+        
