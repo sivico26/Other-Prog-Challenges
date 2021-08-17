@@ -1,6 +1,5 @@
 use std::io::{self, BufRead};
 
-
 fn main() {
     let mut chosen: u8 = 0;
     let mut current: u8  = 0;
@@ -26,29 +25,4 @@ fn main() {
         }   
     }
     println!("The number that repeats itself the most is {}, it repeats itself {} times, starting from the decimal {}", chosen as char, max_len, pos_max -2)
-
-    // let stdin = io::stdin();
-    // for (i, byte) in stdin.lock().read_until().enumerate(){
-
-    // }
-    // for (i, line) in stdin.lock().lines().enumerate() {
-    //     for chr in line.unwrap().as_bytes() {
-    //         println!("{}", chr)
-    //     };
-        
-    // }
-
-    // for line in io::stdin().read_line(&mut buffer) {
-
-    // }
-
-    // for digit in buffer {
-    //     if digit == '.' || digit == '\n' {
-            
-    //         decimals = True
-    //     }
-    //     something
-    // }
-
-    // println!("Hello, world!");
 }
