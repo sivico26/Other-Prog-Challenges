@@ -15,8 +15,8 @@ fn main() {
     
     for (i, b) in buffer.iter().enumerate() {
         if b != &current {
-            if (i as u64 - pos) as u64 > max_len {
-                max_len = (i as u64 - pos) as u64;
+            if i as u64 - pos > max_len {
+                max_len = i as u64 - pos;
                 pos_max = pos;
                 chosen = current;
             }
