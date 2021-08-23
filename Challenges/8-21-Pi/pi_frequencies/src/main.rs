@@ -39,7 +39,7 @@ fn main() {
     }
 
     // Finally, let us print the table of frequencies.
-    println!("Table of frequencies");
+    println!("Table of frequencies of repeated consecutive digits (>4)");
     println!("Numbers\t{}", (0..10).into_iter().map(|x| x.to_string() + "\t").collect::<String>());
     println!("Length");
     for (i,hash) in hash_struct.iter().enumerate() {
